@@ -1,0 +1,10 @@
+Credits.txt
+
+<hr> css code (used in footers)
+https://stackoverflow.com/questions/4151743/how-can-i-change-the-thickness-of-my-hr-tag#4151770
+
+css: i think 99% me.
+html: almost all me (except for the footer link-code (not the footer itself) attribution is somewhere in the code but i can't find it, once i do i'll put it here.)
+js: i think its all me as of right now.
+
+and you, for reading this. why?

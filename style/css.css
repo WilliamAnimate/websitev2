@@ -1,0 +1,90 @@
+/*
+bad css.css clone from my blog so i can redesign + consistant-ify my website.
+uses code from MVP.css.
+LICENSED UNDER MIT.
+*/
+
+/* todo: add different warning colors? idk */
+
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100;400;800&display=swap");
+
+:root{
+  --color-bg: #eeeeee; /* no #ffffff because that kills your i */
+  --text-color: #1b1b1b;
+  --text-color-vibrant: black;
+}
+@media (prefers-color-scheme: dark) { /* attribution: MVP.css */
+  :root{
+    --bg-color: #1b1b1b;
+    --text-color: #eeeeee;
+    --text-color-vibrant: white;
+  }
+}
+
+.colorblind-mode * {/* colorblind mode styles, force override on everything */
+  /* background-color: #777 !important; */
+  background-color: black !important; /* ensure readability and anger light mode fans */
+  color:#eeeeee !important;
+} 
+
+/* body {
+  font-family: "lexend", sans-serif;
+  background-color: #1b1b1b;
+  color: #eeeeee; /*eeeeee*/
+  /* text-align: center;
+} */
+body {
+  font-family: "lexend", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  text-align: center;
+}
+a:link {color:#118bee;background-color:transparent;text-decoration:none}
+a:visited {color:#118bee;background-color:transparent;text-decoration:none}
+a:hover {color:var(--text-color-vibrant);background-color:transparent;text-decoration: underline}
+.h1 {font-family:"lexend",sans-serif}
+.title {
+  font-size: 5rem;
+  margin-top: 1px;
+  margin-bottom: 24px;
+  color: var(--text-color-vibrant);
+}
+.subtitle {
+  font-size: 1em;
+  margin-top: 16px;
+}
+
+.warning {color: yellow}
+.caution {color: red}
+.yes {color: lightgreen}
+
+/* text slide up */
+.text {
+  color: var(--text-color);
+  transform: translateY(10%);
+  transition: transform 0.3s ease-in-out;
+  /* if anyone could put a <br> like thing here without html and only css and tells me how to do it i will give you a virtual head pat
+  why? so i don't have to spam <br> after each class="text" thing.
+  */
+}
+.text:hover {transform: translateY(0)}
+
+.subtitletext {
+  user-select: none;
+  font-size: 1em;
+  margin-top: 16px;
+  /* 404 lol */
+  color: var(--text-color);
+  transform: translateY(10%);
+  transition: transform 0.3s ease-in-out;
+}
+.subtitletext:hover {transform: translateY(0)}
+
+/* credit: https://stackoverflow.com/questions/4151743/how-can-i-change-the-thickness-of-my-hr-tag#4151770 */
+hr { 
+  border: none;
+  height: 1px;
+  /* Set the hr color */
+  /* no ie support L */
+  background-color: #333; /* Modern Browsers */
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <!-- location of css.css is unpredictable, so the required css for this page will be embedded within the file. -->
+    <style>@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100;400;800&display=swap");
+      body{font-family:"lexend",sans-serif;background-color:#1b1b1b;color:#eeeeee;text-align:center;user-select:none}
+      a{color:#eeeeee;background-color:transparent;text-decoration:none}a:hover{text-decoration:underline}
+      .title{margin-bottom:24px;margin-top:1px}
+      .text{transform:translateY(10%);transition:transform 0.3s ease-in-out}.text:hover{transform:translateY(0)}
+      .subtitletext{font-size:1em;margin-top:16px;transform:translateY(10%);transition:transform 0.3s ease-in-out}.subtitletext:hover{transform:translateY(0)}</style>
+    <meta name="viewport"content="width=device-width,initial-scale=1"/>
+  </head>
+  <body>
+    <a><h1 class="title"style="font-size:10em">404</h1></a>
+    <p onclick="randW()"class="subtitletext">thats an error.</p>
+    <p style="font-size:2rem">you look lost.<br>could these links help you?</p>
+    <a href=index.html><div class="text">index.html</div></a><br>
+    <a href=index.html><div class="text">index.html</div></a><br>
+    <a href=index.html><div class="text">index.html</div></a><br>
+    <p style="font-size:2em;color:red">I am currently recreating (or recreated if I forgot to change the message) the website, many things may no longer be here or are not added yet.</p>
+  </body>
+</html>
+
+<script>
+  // code in this <script> tag was originally written by Ryan Hinchliffe, from https://stackoverflow.com/questions/62809591/how-to-pick-random-words-in-html)
+  let theList = ["Oops! This page seems to be missing.", "We can't seem to find the page you're looking for.", "Looks like you've hit a dead end.", "The page you requested is not available.", "This is not the page you are looking for.", "Sorry, we couldn't find what you were looking for.", "Looks like you took a wrong turn.", "The page may have been moved or deleted.", "This page has gone missing, just like your socks in the dryer.", "We dropped the 'blog_svc' service, try again?", "Whoa! you <u><a href=https://takeb1nzyto.space/>hit a rate limit!</u></a> slow down.", "That's an error", "Come to find out, the page got stolen", "Come to find out, the page is gone"]
+  function randW(aList){
+    function randomWordPicker(aList){
+      let theListLength = theList.length/10
+      let theAnswer = Math.floor((Math.random()*10)*theListLength)
+      return aList[theAnswer]
+    }
+    let result = randomWordPicker(theList)
+    document.querySelector("p").innerHTML = result + " ↺"
+  }
+  randW()
+</script>
