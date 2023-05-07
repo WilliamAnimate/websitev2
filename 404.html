@@ -18,14 +18,18 @@
     <a href=index.html><div class="text">index.html</div></a><br>
     <a href=index.html><div class="text">index.html</div></a><br>
     <a href=index.html><div class="text">index.html</div></a><br>
-    <p style="font-size:2em;color:red">I am currently recreating (or recreated if I forgot to change the message) the website, many things may no longer be here or are not added yet.</p>
+
+    <h2><u>did you know?</u></h2>
+    <h3 class="text"onclick="a()">now you do!</h3>
+    <p style="font-size:2em;color:red">I am currently recreating <span style="font-size:0.5em;">(or recreated if I forgot to change the message)</span> the website, many things may no longer be here or are not added yet.</p>
   </body>
 </html>
 
 <script>
   // code in this <script> tag was originally written by Ryan Hinchliffe, from https://stackoverflow.com/questions/62809591/how-to-pick-random-words-in-html)
-  let theList = ["Oops! This page seems to be missing.", "We can't seem to find the page you're looking for.", "Looks like you've hit a dead end.", "The page you requested is not available.", "This is not the page you are looking for.", "Sorry, we couldn't find what you were looking for.", "Looks like you took a wrong turn.", "The page may have been moved or deleted.", "This page has gone missing, just like your socks in the dryer.", "We dropped the 'blog_svc' service, try again?", "Whoa! you <u><a href=https://takeb1nzyto.space/>hit a rate limit!</u></a> slow down.", "That's an error", "Come to find out, the page got stolen", "Come to find out, the page is gone"]
+  let theList=["error"]
   function randW(aList){
+    theList = ["Oops! This page seems to be missing.", "We can't seem to find the page you're looking for.", "Looks like you've hit a dead end.", "The page you requested is not available.", "This is not the page you are looking for.", "Sorry, we couldn't find what you were looking for.", "Looks like you took a wrong turn.", "The page may have been moved or deleted.", "This page has gone missing, just like your socks in the dryer.", "We dropped the 'blog_svc' service, try again?", "Whoa! you <u><a href=https://takeb1nzyto.space/>hit a rate limit!</u></a> slow down.", "That's an error", "Come to find out, the page got stolen", "Come to find out, the page is gone"]
     function randomWordPicker(aList){
       let theListLength = theList.length/10
       let theAnswer = Math.floor((Math.random()*10)*theListLength)
@@ -35,4 +39,12 @@
     document.querySelector("p").innerHTML = result + " ↺"
   }
   randW()
+  function a(){
+    theList = ["i miss niko", "i only had one shot", "wait why am i writing all these messages about oneshot again?", "--- todo: add more oneshot stuff here", "pancakes", "why", "golden hour kinda fresh tho", "wiamill when fly spirit v69 upda", "ok but why", "oneshot's story is over :(", "when oneshot sequal", "when portal 2 sequal", "when half life 2 sequal", "when valve count to 3?", "when little nightmares 3?", "when oneshot 2", "when flying spirit airlines 2 --- the flight simulator", "when flying spirit airlines 3 --- hunt the spacetime anomaly", "when The Stanley Parable 3 or The Stanley Parable Extreme Deluxe...", "best food isn't pancakes, its waf- <b><u><i>this user has been killed by niko.</i></u></b>", "best food isn't waffles, its pancak- <b><u><i>this user has been killed by the anti-niko community and the waffle community</b></u></i> <h6>PLAYER NOOOOO!!! -niko</h6>", "PLAYER! im not putting the sun in there!", "....Player! I am <B><u>NOT</B></u> going to put the sun here.", "Oh! This machine is still running! Maybe I shouldn't stand so close to it... Wh...what if my scarf got caught in there? And then it'll pull me in, and.... ...not gonna finish that sentence.", "Player!<br>I am NOT gonna smash the sun!", "{Hey niko do a robot voice} ... ...What? {Try talking like a robot!} um... *ahem* <i>[I'M A ROBOT AND I... EAT BATTERIES... INSTEAD OF NORMAL PEOPLE FOOD!]</i> Hehe... [THAT IS NOT CORRECT.] [ROBOTS DO NOT CONSUME BATTERIES IN THE SAME WAY PEOPLE CONSUME FOOD.] [IN FACT, ROBOTS DO NOT POSESS DIGESTIVE SYSTEMS.] [SOME ROBOTS DO NOT EVEN HAVE MOUTHS.] Player... you made me look silly... <h6>LMAO</h6>", "Why... would you want to smash a bottle here, Player? The shards would get everywhere!", "Ah... do you want me to crush the pipe in here, Player? Ohh, but I don't wanna get too close... ... That was scary... <br> <h6>I hope we don't have to use this again, Player...", "When life gives you lemons, don't make lemonade. Make life take the lemons back! Get mad! I don't want your damn lemons, what the hell am I supposed to do with these? Demand to see life's manager! Make life rule the day it thought it could give Cave Johnson lemons! Do you know who I am? I'm the man who's gonna burn your house down! With the lemons! I'm gonna get my engineers to invent a combustible lemon that burns your house down!", "When life gives you melons, you might be dyslexic.", "The more you know ⭐", "Did you know?", "Now you know!", "/b/", "javascript optimizer when", "flying emirates airlines when"]
+    function v(aList){
+    theListLength = theList.length/10
+    theAnswer = Math.floor((Math.random()*10)*theListLength);return aList[theAnswer]}
+    result = v(theList);document.querySelector("h3").innerHTML = result
+  }
+  a()
 </script>

@@ -11,18 +11,49 @@
 
     <link rel="stylesheet" href="style/css.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- <style>
+      /* profile picture */
+      .profile-pic {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        background-image: url("img/logo.png");
+        background-size: cover;
+        opacity: 0;
+        transform: translateY(-100px);
+        animation: slide-in 1.5s ease-out forwards, fade-in 0.5s ease-out forwards 0.5s;
+        /* centering */
+        /* position: absolute; */
+        top: 50%;
+        /* left: 44.4%; */
+        left: 10%;
+        transform: translate(-50%, -50%) translateY(-100px);
+      }
+
+      @keyframes slide-in {
+        from {transform: translateY(-100px)}
+        to {transform: translateY(0)}
+      }
+
+      @keyframes fade-in {
+        from {opacity: 0}
+        to {opacity: 1}
+      }
+    </style> -->
   </head>
   <body>
     <a href="index.html" style="text-align:left"><div class="text">← index.html</div></a>
-    <a><h1 class="title" style="color:lightgray;user-select:none">Welcome to <span style="color: white;">my website!</span></h1></a>
-    <p class="subtitle">despite unfunny + unpopular claims, im not an animator :skull:</p>
+    <h1 class="title" style="color:var(--text-color-gray);user-select:none">Welcome to <span style="color:var(--text-color-vibrant)">my website!</span></h1>
+    <p class="subtitle">despite unfunny + nonexistant claims, im not an animator :skull:</p>
     <br>
-    <a href=About/index.html><div class="text">About page</div></a> <!-- in the production build we do not need the '/index.html' but thats not how local files work. -->
+    <!-- <div class="profile-pic"></div> -->
     <br>
-    <a href=blog2.html><div class="text">your mom</div></a>
+    <a href=About><div class="text">About page</div></a>
+    <br>
+    <a href=Windows10inScratch><div class="text">Windows 10 in Scratch documentation</div></a>
     <br>
     <a href=https://williamanimate.github.io/blog><div class="text">Blog</div></a>
     <br>
-    <div id="footer"><object type="text/html" data="footer.html" style="overflow:auto; width: 100%; height: 100%;"></object></div>
+    <div id="footer"><object type="text/html"data="footer.html"style="overflow:auto;width:100%;height:100%"></object></div>
   </body>
 </html>

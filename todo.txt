@@ -1,4 +1,5 @@
 TODO:
-make <button> look good
 
 reimplement dead links that ARE in the original webpage, including the abandoned windows 10 in scratch project (but the actual docs are added based off distant memory)
+
+unformat footer code?

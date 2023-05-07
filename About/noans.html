@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .loader {
+                border: 8px solid #f3f3f3;
+                border-top: 8px solid #3498db;
+                border-radius: 50%;
+                width: 40px;
+                height: 40px;
+                animation: spin 2s linear infinite;
+                margin: 0 auto;
+            }
+            @keyframes spin {0% {transform:rotate(0deg);}100% {transform:rotate(360deg)}}
+        </style>
+        <link rel="stylesheet" href="../style/css.css"/>
+        <meta name="viewport"content="width=device-width,initial-scale=1"/>
+    </head>
+    <body>
+        <p style="font-size:5em"class="title">redirecting to main content</p>
+        <div class="loader"></div>
+        <p class="text"style="color:darkgray;font-size:2em" onclick="a()">impatient?</p>
+        <p style="color:darkgrey;font-size:10px">emergency override</p>
+    </body>
+    <script>setTimeout(function(){a()},3000);function a(){location.replace("https://youtu.be/xvFZjo5PgG0")}</script>
+</html>

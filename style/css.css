@@ -1,5 +1,5 @@
 /*
-bad css.css clone from my blog so i can redesign + consistant-ify my website.
+css.css
 uses code from MVP.css.
 LICENSED UNDER MIT.
 */
@@ -12,20 +12,32 @@ LICENSED UNDER MIT.
   --color-bg: #eeeeee; /* no #ffffff because that kills your i */
   --text-color: #1b1b1b;
   --text-color-vibrant: black;
+  --text-color-gray: gray;
+
+  --colorblind-mode-bgcolor: white;
+  --colorblind-mode-textcolor: black;
 }
 @media (prefers-color-scheme: dark) { /* attribution: MVP.css */
   :root{
     --bg-color: #1b1b1b;
     --text-color: #eeeeee;
     --text-color-vibrant: white;
+    --text-color-gray: lightgray;
+
+    /* --colorblind-mode-bgcolor: black; */
+    --colorblind-mode-bgcolor: #1b1b1b; /* maybe make it blend with the background color lmao */
+    --colorblind-mode-textcolor: white;
   }
 }
 
 .colorblind-mode * {/* colorblind mode styles, force override on everything */
-  /* background-color: #777 !important; */
-  background-color: black !important; /* ensure readability and anger light mode fans */
-  color:#eeeeee !important;
-} 
+  /* TODO: add smooth transistion? */
+  background-color: var(--colorblind-mode-bgcolor) !important; /* ensure readability and anger light mode fans */
+  color:var(--colorblind-mode-textcolor) !important;
+}
+
+/* ensure link readability */
+.colorblind-mode a:link,a:visited{text-decoration:underline !important}
 
 /* body {
   font-family: "lexend", sans-serif;
@@ -39,8 +51,7 @@ body {
   color: var(--text-color);
   text-align: center;
 }
-a:link {color:#118bee;background-color:transparent;text-decoration:none}
-a:visited {color:#118bee;background-color:transparent;text-decoration:none}
+a:link,a:visited {color:#118bee;background-color:transparent;text-decoration:none}
 a:hover {color:var(--text-color-vibrant);background-color:transparent;text-decoration: underline}
 .h1 {font-family:"lexend",sans-serif}
 .title {
@@ -49,6 +60,7 @@ a:hover {color:var(--text-color-vibrant);background-color:transparent;text-decor
   margin-bottom: 24px;
   color: var(--text-color-vibrant);
 }
+.title:hover{text-decoration:underline}
 .subtitle {
   font-size: 1em;
   margin-top: 16px;
@@ -60,7 +72,7 @@ a:hover {color:var(--text-color-vibrant);background-color:transparent;text-decor
 
 /* text slide up */
 .text {
-  color: var(--text-color);
+  color: var(--text-color) !important; /* important needed to override the style a:link */
   transform: translateY(10%);
   transition: transform 0.3s ease-in-out;
   /* if anyone could put a <br> like thing here without html and only css and tells me how to do it i will give you a virtual head pat
@@ -80,11 +92,30 @@ a:hover {color:var(--text-color-vibrant);background-color:transparent;text-decor
 }
 .subtitletext:hover {transform: translateY(0)}
 
-/* credit: https://stackoverflow.com/questions/4151743/how-can-i-change-the-thickness-of-my-hr-tag#4151770 */
-hr { 
+
+hr { /* credit: https://stackoverflow.com/questions/4151743/how-can-i-change-the-thickness-of-my-hr-tag#4151770 */
   border: none;
   height: 1px;
-  /* Set the hr color */
-  /* no ie support L */
+  color: #333; /* sorry IE gang */
   background-color: #333; /* Modern Browsers */
 }
+
+/* button */
+/* probably only gonna be used by colorblind mode toggle lol */
+button {
+  font-family: "lexend", sans-serif;
+  display: inline-block;
+  border-color: var(--colorblind-mode-textcolor); /* 2 colors here for some reason but i can't bother to fix it right now lmfao */
+  border-radius: 4ex;
+  padding: 10px 20px;
+  background-color: #0077cc;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover,button:focus{background-color:#005fa3}
