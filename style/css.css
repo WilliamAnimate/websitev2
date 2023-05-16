@@ -3,72 +3,109 @@ css.css
 uses code from MVP.css.
 LICENSED UNDER MIT.
 */
-
-/* todo: add different warning colors? idk */
-
 @import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100;400;800&display=swap");
 
 :root{
   --color-bg: #eeeeee; /* no #ffffff because that kills your i */
   --text-color: #1b1b1b;
-  --text-color-vibrant: black;
+  --text-color-vibrant: black; /* vibrant. very. */
   --text-color-gray: gray;
 
-  --colorblind-mode-bgcolor: white;
-  --colorblind-mode-textcolor: black;
+  --colorblind-mode-bgcolor: #eee;
+  --colorblind-mode-textcolor: #1b1b1b;
 }
 @media (prefers-color-scheme: dark) { /* attribution: MVP.css */
   :root{
-    --bg-color: #1b1b1b;
+    --color-bg: #1b1b1b;
     --text-color: #eeeeee;
     --text-color-vibrant: white;
     --text-color-gray: lightgray;
 
     /* --colorblind-mode-bgcolor: black; */
-    --colorblind-mode-bgcolor: #1b1b1b; /* maybe make it blend with the background color lmao */
-    --colorblind-mode-textcolor: white;
+    --colorblind-mode-bgcolor: #1b1b1b;
+    --colorblind-mode-textcolor: #eee;
   }
 }
 
 .colorblind-mode * {/* colorblind mode styles, force override on everything */
   /* TODO: add smooth transistion? */
-  background-color: var(--colorblind-mode-bgcolor) !important; /* ensure readability and anger light mode fans */
-  color:var(--colorblind-mode-textcolor) !important;
+  background-color: var(--colorblind-mode-bgcolor)!important; /* ensure readability */
+  color: var(--colorblind-mode-textcolor)!important;
+  /* filter: grayscale(1)!important; */
 }
 
 /* ensure link readability */
 .colorblind-mode a:link,a:visited{text-decoration:underline !important}
+.colorblind-mode a:hover{text-decoration:overline !important}
 
-/* body {
-  font-family: "lexend", sans-serif;
-  background-color: #1b1b1b;
-  color: #eeeeee; /*eeeeee*/
-  /* text-align: center;
-} */
+*{font-family:"lexend",sans-serif!important} /* wait, it's all lexend? ALWAYS HAS BEEN */
 body {
-  font-family: "lexend", sans-serif;
-  background-color: var(--bg-color);
+  background-color: var(--color-bg);
   color: var(--text-color);
   text-align: center;
+  transition: background 0.5s;
 }
 a:link,a:visited {color:#118bee;background-color:transparent;text-decoration:none}
-a:hover {color:var(--text-color-vibrant);background-color:transparent;text-decoration: underline}
-.h1 {font-family:"lexend",sans-serif}
+a:hover {color:var(--text-color-vibrant);background-color:transparent;text-decoration:underline}
 .title {
   font-size: 5rem;
   margin-top: 1px;
   margin-bottom: 24px;
   color: var(--text-color-vibrant);
 }
-.title:hover{text-decoration:underline}
+.title:hover {text-decoration:underline}
 .subtitle {
   font-size: 1em;
   margin-top: 16px;
 }
 
-.warning {color: yellow}
-.caution {color: red}
-.yes {color: lightgreen}
+/* DOCS: do not mix up these colors with the -bg colors. Do if it actually somehow looks good for your purpose. */
+.warning {color:yellow}
+.caution {color:red}
+.yes {color:lightgreen}
+/* 
+  for smaller text in caution/warn/yes/whatever -- just embed the css into the <p> or something
+    eg: <p class="caution" style="font-size:0.6em;>smaller caution text here</p>
+  maybe i'll add support for it.
+*/
+
+/* TODO: reimplement colorLabelContainer? */
+/* .colorLabelContainer { */
+.caut-bg {
+  font-size: 2em;
+  background-color: #610000; /* originally 'darkred' */
+  border-radius: 4ex;
+  padding: 20px 40px;
+  display: inline-block;
+}
+
+.warn-bg {
+  font-size: 2em;
+  background-color: #616100;
+  border-radius: 4ex;
+  padding: 20px 40px;
+  display: inline-block;
+}
+
+.yes-bg {
+  font-size: 2em;
+  background-color: #90b190; /* todo: darker this color */
+  /* 90ee90 */
+  border-radius: 4ex;
+  padding: 20px 40px;
+  display: inline-block;
+}
+/* } */
+
+/* <code> */
+code, samp {
+  background-color: var(--color-bg);
+  border-radius: 4ex;
+  color: var(--text-color-vibrant);
+  display: inline-block;
+  margin: 0 0.1rem;
+  padding: 0 0.5rem;
+}
 
 /* text slide up */
 .text {
@@ -85,26 +122,22 @@ a:hover {color:var(--text-color-vibrant);background-color:transparent;text-decor
   user-select: none;
   font-size: 1em;
   margin-top: 16px;
-  /* 404 lol */
   color: var(--text-color);
   transform: translateY(10%);
   transition: transform 0.3s ease-in-out;
 }
 .subtitletext:hover {transform: translateY(0)}
 
-
 hr { /* credit: https://stackoverflow.com/questions/4151743/how-can-i-change-the-thickness-of-my-hr-tag#4151770 */
   border: none;
   height: 1px;
-  color: #333; /* sorry IE gang */
-  background-color: #333; /* Modern Browsers */
+  background-color: #333;
 }
 
 /* button */
 /* probably only gonna be used by colorblind mode toggle lol */
+/* TODO: minimize this */
 button {
-  font-family: "lexend", sans-serif;
-  display: inline-block;
   border-color: var(--colorblind-mode-textcolor); /* 2 colors here for some reason but i can't bother to fix it right now lmfao */
   border-radius: 4ex;
   padding: 10px 20px;
@@ -112,10 +145,8 @@ button {
   color: #ffffff;
   font-size: 16px;
   font-weight: bold;
-  text-align: center;
-  text-decoration: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  font-weight: normal;
 }
-
 button:hover,button:focus{background-color:#005fa3}

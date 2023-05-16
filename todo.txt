@@ -3,3 +3,5 @@ TODO:
 reimplement dead links that ARE in the original webpage, including the abandoned windows 10 in scratch project (but the actual docs are added based off distant memory)
 
 unformat footer code?
+
+potentally make --text-color darker

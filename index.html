@@ -11,49 +11,40 @@
 
     <link rel="stylesheet" href="style/css.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <!-- <style>
-      /* profile picture */
-      .profile-pic {
-        position: relative;
-        width: 200px;
-        height: 200px;
-        background-image: url("img/logo.png");
-        background-size: cover;
-        opacity: 0;
-        transform: translateY(-100px);
-        animation: slide-in 1.5s ease-out forwards, fade-in 0.5s ease-out forwards 0.5s;
-        /* centering */
-        /* position: absolute; */
-        top: 50%;
-        /* left: 44.4%; */
-        left: 10%;
-        transform: translate(-50%, -50%) translateY(-100px);
-      }
-
-      @keyframes slide-in {
-        from {transform: translateY(-100px)}
-        to {transform: translateY(0)}
-      }
-
-      @keyframes fade-in {
-        from {opacity: 0}
-        to {opacity: 1}
-      }
-    </style> -->
+    <title>Home page</title>
   </head>
   <body>
-    <a href="index.html" style="text-align:left"><div class="text">← index.html</div></a>
+    <a href="../index.html" style="text-align:left"><div class="text">← index.html</div></a>
     <h1 class="title" style="color:var(--text-color-gray);user-select:none">Welcome to <span style="color:var(--text-color-vibrant)">my website!</span></h1>
+    <h2 class="subtitle">Hey there traveller!</h2>
     <p class="subtitle">despite unfunny + nonexistant claims, im not an animator :skull:</p>
-    <br>
-    <!-- <div class="profile-pic"></div> -->
     <br>
     <a href=About><div class="text">About page</div></a>
     <br>
     <a href=Windows10inScratch><div class="text">Windows 10 in Scratch documentation</div></a>
     <br>
-    <a href=https://williamanimate.github.io/blog><div class="text">Blog</div></a>
+    <!-- <a href=https://williamanimate.github.io/blog><div class="text">Blog</div></a>
+    <br> --> <!-- when i fix the blog readd etc -->
+    <a href=art><div class="text">Random art stuff</div></a>
+    <br>
+    <a href=WebRR><div class="text">Legit quote maker</div></a>
+    <br>
+    <a href=#><div class="text">Placeholder entry</div></a>
+    <br>
+    <a href=#><div class="text">Placeholder entry</div></a>
+    <br>
+    <a href=#><div class="text">Placeholder entry</div></a>
     <br>
     <div id="footer"><object type="text/html"data="footer.html"style="overflow:auto;width:100%;height:100%"></object></div>
   </body>
+  <script>
+    var time=new Date().getHours();var r="day";var foo=0;
+    // evening starts at 8 pm
+    // TODO: time may be set multiple times
+    if(time<12){r="morning"}if(time<4){r="grief, It is very late,";foo=1}if(time>4&&time<7){r="morning, It is really early, ";foo=1}if(time>12){r="afternoon"}if(time>20){r="evening"}
+    if(foo==0){document.querySelector("h2").innerHTML = "Good "+r+" traveller!<span style='font-weight:normal;font-size:0.8em'><br>If you're looking for recipes for a special recipe of pancakes, specifically ones that have hazelnuts grinded in the batter, you came to the wrong place. <span style='color:red;text-decoration:underline'onclick=a()>But... I do know someone who likes said pancakes.</span>"
+    }else{document.querySelector("h2").innerHTML = "Good "+r+" traveller!"}
+
+    function a(){window.location.replace("https://store.steampowered.com/app/420530")}
+  </script>
 </html>

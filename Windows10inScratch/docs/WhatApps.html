@@ -14,10 +14,20 @@
     </head>
     <body>
         <a href="..\index.html" style="text-align:left"><div class="text">← index.html</div></a>
-        <h1>TristanPoland updated the app system. he will have to write the documentation</h1>
-        <p>while you wait why dont you try the fullscreen apps documentation?</p>
+        <h1>Windowed application documentation</h1>
+        <p>It is extremely simple, there are 2 ways to implement this, one way allows you to use the PAL, the other way is significantly more difficult.</p>
+        <h2>Using the <b>BUILT IN</b> app system:</h2>
+        <p>coming soon</p>
+        <h3>Using the PAL libary for your app.</h3>
+        <p>you don't</p>
+        <h2>Building your own applications from scratch, literally.</h2>
+        <p>so basically have a broadcast listen for the "os_createapp" broadcast or something i don't have it open right now<br>then when receiving such request, check the 'os_appid' varable, if it equals your appid, then run your program's initiation stuff</p>
+        <p class="caution caut-bg">⚠️ caution<br><span style="font-size:0.6em">please take extreme measures to prevent appid overlapping, <b>make sure your appid does NOT overlap with any applications.<br><u>more importantly, overlapping exclusivemode applications.</u></b> Failure to do so may result in complete breakdown of the app system.</span></p>
+
+        <p class="warning warn-bg">⚠️ warning<br><span style="font-size:0.6em">I would highly recommend that you don't intentally use this to break stuff. best way to break everything is deleting the <code>onecore</code> sprite and then trying to launch applications, sure, some may work but everything else breaks.</span></p>
+
+        <p class="yes yes-bg">yes do THIS<br><span style="font-size:0.6em">currently a test for the rule <code>yes</code>. I still have a ways to go before this is done.</span></p>
         <br>
-        <p><sub>WilliamAnimate &copy; 2020~2021, all rights reserved</sub></p>
-        <p><sub>TristanPoland &copy; 2020~2021, all rights reserved</sub></p>
+        <object type="text/html" data="../a.html" style="overflow:auto; width: 100%; height: 100%;"></object>
     </body>
 </html>
